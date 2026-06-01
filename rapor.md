@@ -293,66 +293,40 @@ Bu yapı ile foreground komutların shell'i beklettiği, background komutların 
 
 Bu görüntüde `sleep 2` ve `sleep 10 &` komutlarının log kayıtları karşılaştırılacak.
 
-## Test Senaryoları
+## Zorunlu Şartlarla Eşleşme
 
-### 1. Derleme Testi
+Bu bölümde proje gereksinimlerinin kodda hangi yapılarla karşılandığı özetlenmiştir. Sunum sırasında canlı demo yapıldığı için komut testleri ayrıca tekrar edilmemiştir.
 
-```bash
-make
-```
+| Zorunlu Şart | Projedeki Karşılığı |
+| --- | --- |
+| C ve POSIX/Linux API kullanımı | Proje C ile yazılmıştır; `fork`, `execvp`, `waitpid`, `pipe`, `dup2`, `chdir`, `getcwd`, `open` gibi POSIX/Linux API çağrıları kullanılmıştır. |
+| Process veya thread kullanımı | Dış komutlar ve pipe komutları için `fork()` ile çocuk süreçler oluşturulur. |
+| Senkronizasyon mekanizması | Background süreç listesini korumak için `pthread_mutex_t jobs_mutex` kullanılır. |
+| Loglama | Komutlar `shell.log` dosyasına komut adı, süre, tip ve durum bilgisiyle yazılır. |
+| Hata yönetimi | `perror()` ve özel hata mesajları ile hatalı komut, hatalı pipe ve yönlendirme hataları kullanıcıya bildirilir. |
+| Performans değerlendirmesi | Foreground komutların çalışma süresi `gettimeofday()` ile ölçülür ve milisaniye cinsinden loglanır. |
+| Komut satırı okuma | Kullanıcı girdisi `readline()` ile alınır. |
+| `fork`, `exec`, `wait/waitpid` | Komut çalıştırmada `fork()`, `execvp()` ve `waitpid()` birlikte kullanılır. |
+| Tek seviyeli pipe desteği | `execute_pipeline()` içinde `pipe()` ve `dup2()` ile `komut1 | komut2` desteği sağlanır. |
+| Built-in komutlar | `cd`, `exit`, `pwd`, `history`, `jobs`, `log`, `clear`, `help`, `fg`, `killjob` desteklenir. |
+| Background process | Komut sonunda `&` kullanılırsa süreç arka planda başlatılır. |
+| Hatalı komutta shell'in kapanmaması | `execvp()` başarısız olursa hata yazdırılır, çocuk süreç sonlanır ve shell yeni komut almaya devam eder. |
+| Son 10 komutluk history | `history_arr` dizisi son 10 komutu tutar; sınır aşılırsa en eski komut silinir. |
 
-Beklenen sonuç: `shell` çalıştırılabilir dosyası oluşur.
+## Ek Özellikler
 
-### 2. Pipe Testi
+Zorunlu maddelere ek olarak projeye kullanımı kolaylaştıran bazı özellikler eklenmiştir:
 
-```bash
-touch deneme.txt
-ls | grep txt
-```
+- `help [komut]` ile komuta özel yardım görüntüleme.
+- `log <sayi>` ile son N log kaydını listeleme.
+- `log clear` ile log dosyasını temizleme.
+- `history clear` ile komut geçmişini temizleme.
+- `killjob <no>` ile arka plan sürecini sonlandırma.
+- `fg <no>` ile arka plan sürecini foreground olarak bekleme.
+- `>` ve `<` operatörleri ile basit çıktı/girdi yönlendirme.
+- `jobs` komutunda aktif ve geçmiş arka plan süreçlerini ayrı ayrı gösterme.
 
-Beklenen sonuç: `deneme.txt` çıktısı görülür.
-
-### 3. Background Testi
-
-```bash
-sleep 10 &
-jobs
-```
-
-Beklenen sonuç: aktif arka plan süreci listelenir.
-
-### 4. Hatalı Komut Testi
-
-```bash
-olmayan_komut
-```
-
-Beklenen sonuç: Hata mesajı verilir, shell kapanmaz.
-
-### 5. History Testi
-
-```bash
-history
-```
-
-Beklenen sonuç: Son 10 komut listelenir.
-
-### 6. Yönlendirme Testi
-
-```bash
-echo merhaba > out.txt
-cat < out.txt
-```
-
-Beklenen sonuç: `merhaba` çıktısı görülür.
-
-### 7. Log Testi
-
-```bash
-log 5
-```
-
-Beklenen sonuç: Son 5 log kaydı gösterilir.
+Bu ek özellikler projenin temel shell davranışını genişletir ve süreç yönetimi, dosya işlemleri, hata kontrolü ve kullanıcı etkileşimi açısından daha anlaşılır bir yapı sunar.
 
 ## Karşılaşılan Problemler ve Çözümler
 
