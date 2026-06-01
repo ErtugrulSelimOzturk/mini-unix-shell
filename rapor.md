@@ -293,11 +293,11 @@ Bu yapı ile foreground komutların shell'i beklettiği, background komutların 
 
 Bu görüntüde `sleep 2` ve `sleep 10 &` komutlarının log kayıtları karşılaştırılacak.
 
-## Zorunlu Şartlarla Eşleşme
+## Teknik Bileşenler ve Kod Karşılıkları
 
-Bu bölümde proje gereksinimlerinin kodda hangi yapılarla karşılandığı özetlenmiştir. Sunum sırasında canlı demo yapıldığı için komut testleri ayrıca tekrar edilmemiştir.
+Bu bölümde projede kullanılan temel sistem programlama bileşenleri ve bu bileşenlerin kod içindeki karşılıkları özetlenmiştir.
 
-| Zorunlu Şart | Projedeki Karşılığı |
+| Teknik Bileşen | Projedeki Karşılığı |
 | --- | --- |
 | C ve POSIX/Linux API kullanımı | Proje C ile yazılmıştır; `fork`, `execvp`, `waitpid`, `pipe`, `dup2`, `chdir`, `getcwd`, `open` gibi POSIX/Linux API çağrıları kullanılmıştır. |
 | Process veya thread kullanımı | Dış komutlar ve pipe komutları için `fork()` ile çocuk süreçler oluşturulur. |
@@ -350,4 +350,4 @@ History yapısının sadece son 10 komutu tutması için dizi dolduğunda en esk
 
 Bu proje ile C dili ve POSIX/Linux API kullanılarak temel bir Unix shell geliştirilmiştir. Projede process yönetimi, pipe, foreground/background çalışma, mutex ile senkronizasyon, loglama, hata yönetimi, history ve basit yönlendirme özellikleri uygulanmıştır.
 
-Proje, verilen zorunlu şartları karşılamaktadır ve ek olarak `jobs`, `killjob`, `fg`, `log`, `help <komut>` ve yönlendirme gibi kullanımı kolaylaştıran özellikler içermektedir.
+Proje, temel bir Unix shell için gerekli süreç yönetimi, pipe, background çalışma, hata yönetimi, loglama ve history özelliklerini içermektedir. Ek olarak `jobs`, `killjob`, `fg`, `log`, `help <komut>` ve yönlendirme gibi kullanımı kolaylaştıran özellikler eklenmiştir.
