@@ -9,9 +9,9 @@
 **Sunum Ekibi:** 3 kişi
 
 **Üyeler:**
-- Üye 1: Ertuğrul Selim Öztürk
-- Üye 2: İsim Soyisim
-- Üye 3: İsim Soyisim
+- Üye 1: XXX
+- Üye 2: XXX
+- Üye 3: XXX
 
 ## Sunum Akışı
 
