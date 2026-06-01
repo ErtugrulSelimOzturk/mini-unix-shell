@@ -50,9 +50,15 @@ rmdir test
 
 [Görüntü 1: Shell ilk açılış ekranı]
 
+Alt yazı: Program `./shell` komutu ile başlatılmıştır. Açılışta Mini Unix Shell başlığı, komut listesi ve örnek kullanımlar kullanıcıya gösterilir.
+
 [Görüntü 2: Help komutu ve örnekli komut listesi]
 
+Alt yazı: `help` komutu ile desteklenen komutlar, açıklamaları ve örnek kullanımları tablo halinde listelenir.
+
 [Görüntü 3: `pwd`, `mkdir`, `cd`, `rmdir` komutlarının çalışması]
+
+Alt yazı: Temel dizin işlemleri gösterilmektedir. `pwd` mevcut dizini gösterir, `mkdir` dizin oluşturur, `cd` dizin değiştirir ve `rmdir` boş dizini siler.
 
 **Konuşma Notu:**
 
@@ -91,9 +97,15 @@ fg 1
 
 [Görüntü 4: Pipe kullanımı - `ls | grep txt`]
 
+Alt yazı: Pipe örneğinde `ls` komutunun çıktısı `grep txt` komutuna aktarılır. Böylece sadece `.txt` içeren dosya adları filtrelenir.
+
 [Görüntü 5: Background process - `sleep 10 &`]
 
+Alt yazı: `sleep 10 &` komutu arka planda başlatılır. Shell bu komutun bitmesini beklemeden yeni komut almaya devam eder.
+
 [Görüntü 6: `jobs`, `killjob`, `fg` komutları]
+
+Alt yazı: `jobs` aktif ve geçmiş arka plan süreçlerini gösterir. `killjob 1` seçilen süreci sonlandırır, `fg 1` ise arka plan sürecini foreground olarak bekler.
 
 **Konuşma Notu:**
 
@@ -135,11 +147,19 @@ log 5
 
 [Görüntü 7: History komutu ve son 10 komut]
 
+Alt yazı: `history` komutu son 10 komutu listeler. Komut sayısı 10'u geçerse en eski kayıt silinir ve yeni komut sona eklenir.
+
 [Görüntü 8: Yönlendirme - `echo merhaba > out.txt`, `cat < out.txt`]
+
+Alt yazı: `>` operatörü komut çıktısını dosyaya yazar. `<` operatörü ise komut girdisini dosyadan okur.
 
 [Görüntü 9: Hatalı komut ve hatalı pipe mesajı]
 
+Alt yazı: Hatalı komut veya eksik pipe kullanımında shell kapanmaz. Kullanıcıya uygun hata mesajı verilir ve yeni komut alınmaya devam edilir.
+
 [Görüntü 10: `log 5` ile log kayıtları]
+
+Alt yazı: `log 5` komutu son 5 log kaydını gösterir. Loglarda komut adı, çalışma süresi, komut tipi ve durum bilgisi yer alır.
 
 **Konuşma Notu:**
 
