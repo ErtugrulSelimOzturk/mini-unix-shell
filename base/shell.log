@@ -1,0 +1,9 @@
+[Thu May  7 17:42:24 2026] CMD: mkdir test2          | Sure:   5.7020 ms | Tip: On Plan    | Durum: Tamamlandi
+[Thu May  7 17:42:25 2026] CMD: ls                   | Sure:   1.7140 ms | Tip: On Plan    | Durum: Tamamlandi
+[Thu May  7 17:42:30 2026] CMD: a                    | Sure:  54.3700 ms | Tip: On Plan    | Durum: Tamamlandi
+[Thu May  7 17:42:32 2026] CMD: a                    | Sure:  48.4200 ms | Tip: On Plan    | Durum: Tamamlandi
+[Thu May  7 17:42:38 2026] CMD: sdasada              | Sure:  49.3160 ms | Tip: On Plan    | Durum: Tamamlandi
+[Thu May  7 17:42:45 2026] CMD: adsadaaaaaaaa        | Sure:  52.1420 ms | Tip: On Plan    | Durum: Tamamlandi
+[Sun May 31 13:33:50 2026] CMD: ls                   | Sure:   2.1400 ms | Tip: On Plan    | Durum: Tamamlandi
+[Mon Jun  1 13:27:10 2026] CMD: cd test_baba         | Sure:   0.0000 ms | Tip: On Plan    | Durum: Tamamlandi
+[Mon Jun  1 13:27:11 2026] CMD: ls                   | Sure:   6.3060 ms | Tip: On Plan    | Durum: Tamamlandi

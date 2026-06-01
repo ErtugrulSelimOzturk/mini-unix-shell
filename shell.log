@@ -1,0 +1,24 @@
+[Mon Jun  1 14:07:37 2026] CMD: exit                 | Sure:   0.0000 ms | Tip: On Plan    | Durum: Tamamlandi
+[Mon Jun  1 14:07:43 2026] CMD: log                  | Sure:   0.0000 ms | Tip: On Plan    | Durum: Tamamlandi
+[Mon Jun  1 14:07:47 2026] CMD: log                  | Sure:   0.0000 ms | Tip: On Plan    | Durum: Tamamlandi
+[Mon Jun  1 14:08:21 2026] CMD: sleep 5 &            | Sure:   0.0000 ms | Tip: Arka Plan  | Durum: Baslatildi
+[Mon Jun  1 14:08:22 2026] CMD: log                  | Sure:   0.0000 ms | Tip: On Plan    | Durum: Tamamlandi
+[Mon Jun  1 14:08:37 2026] CMD: log                  | Sure:   0.0000 ms | Tip: On Plan    | Durum: Tamamlandi
+[Mon Jun  1 14:09:22 2026] CMD: exit                 | Sure:   0.0000 ms | Tip: On Plan    | Durum: Tamamlandi
+[Mon Jun  1 14:10:58 2026] CMD: help                 | Sure:   0.0000 ms | Tip: On Plan    | Durum: Tamamlandi
+[Mon Jun  1 14:10:58 2026] CMD: help pipe            | Sure:   0.0000 ms | Tip: On Plan    | Durum: Tamamlandi
+[Mon Jun  1 14:10:58 2026] CMD: exit                 | Sure:   0.0000 ms | Tip: On Plan    | Durum: Tamamlandi
+[Mon Jun  1 14:10:58 2026] CMD: touch kontrol.txt    | Sure:   2.0000 ms | Tip: On Plan    | Durum: Tamamlandi
+[Mon Jun  1 14:10:58 2026] CMD: ls | grep kontrol    | Sure:   2.6030 ms | Tip: On Plan    | Durum: Tamamlandi
+[Mon Jun  1 14:10:58 2026] CMD: rm kontrol.txt       | Sure:   1.3270 ms | Tip: On Plan    | Durum: Tamamlandi
+[Mon Jun  1 14:10:58 2026] CMD: exit                 | Sure:   0.0000 ms | Tip: On Plan    | Durum: Tamamlandi
+[Mon Jun  1 14:10:58 2026] CMD: echo merhaba > kontrol_out.txt | Sure:   1.4420 ms | Tip: On Plan    | Durum: Tamamlandi
+[Mon Jun  1 14:10:58 2026] CMD: cat < kontrol_out.txt | Sure:   1.6490 ms | Tip: On Plan    | Durum: Tamamlandi
+[Mon Jun  1 14:10:58 2026] CMD: rm kontrol_out.txt   | Sure:   1.3830 ms | Tip: On Plan    | Durum: Tamamlandi
+[Mon Jun  1 14:10:58 2026] CMD: exit                 | Sure:   0.0000 ms | Tip: On Plan    | Durum: Tamamlandi
+[Mon Jun  1 14:10:58 2026] CMD: olmayan_komut        | Sure: 123.3620 ms | Tip: On Plan    | Durum: Hata
+[Mon Jun  1 14:10:58 2026] CMD: exit                 | Sure:   0.0000 ms | Tip: On Plan    | Durum: Tamamlandi
+[Mon Jun  1 14:11:02 2026] CMD: sleep 1 &            | Sure:   0.0000 ms | Tip: Arka Plan  | Durum: Baslatildi
+[Mon Jun  1 14:11:04 2026] CMD: sleep 2              | Sure: 2002.0110 ms | Tip: On Plan    | Durum: Tamamlandi
+[Mon Jun  1 14:11:04 2026] CMD: jobs                 | Sure:   0.0000 ms | Tip: On Plan    | Durum: Tamamlandi
+[Mon Jun  1 14:11:04 2026] CMD: exit                 | Sure:   0.0000 ms | Tip: On Plan    | Durum: Tamamlandi
